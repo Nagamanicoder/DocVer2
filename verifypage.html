@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b776ffb521.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <title>DocVer</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="sc.js"></script>
+    <script type="module" src="sc2.js"></script>
+    <script src="sc3.js"></script>
+</head>
+
+<body>
+    <!--banner section-->
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-navbar fixed-top">
+        <a class="navbar-brand navbar-heading" href="#"><i class='fas fa-fingerprint'></i>DocVer</a>
+        <div class="ml-5 navbar2">
+            <h2>Document Verification & Management System</h2>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link active text-dark nav-three" href="#sectionHomePage">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+                <a class="nav-link text-dark nav-three" href="#">About Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <div style="margin: 20px; height: 40px;"></div>
+    <div style="margin: 20px; height: 25px;"></div>
+
+    <div id="sectionverifypage">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center option-conatiner">
+                        <h1 class="verify-heading1">Upload your Document to Verify</h1>
+                        <h1 class="verify-heading2">Choose your Document</h1>
+                        <div class="d-flex flex-column justify-content-center">
+                            <input type="file" id="fileInput" placeholder="PDF*" class="w-50" name="Document"
+                                accept="application/pdf" required>
+                        </div>
+                        <button class="btn custom-button" onclick="display('sectionverifedpage')"><i
+                                class="bi bi-file-earmark-check icons"></i>Verify & Upload</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Verified Page -->
+    <div id="sectionverifedpage">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center option-conatiner bg-verified" style="overflow: scroll;">
+                        <h1 class="text-dark">Successfully Verified!</h1>
+                        <h4 class="text-dark">Your Document is Valid</h4>
+                        <!-- Verification icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="#5FEC26"
+                            class="bi bi-clipboard2-check" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5z" />
+                            <path
+                                d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5z" />
+                            <path
+                                d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z" />
+                        </svg>
+                        <pre id="output" style="font-weight: bold; background-color: aliceblue;"></pre>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById("fileInput");
+        const output = document.getElementById("output");
+
+        fileInput.addEventListener("change", async (event) => {
+            const file = event.target.files[0];
+            if (file && file.type === "application/pdf") {
+                const arrayBuffer = await file.arrayBuffer();
+                const pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+                // Load the PDF
+                const pdf = await pdfjsLib.getDocument(arrayBuffer).promise;
+
+                let pdfText = "";
+                for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+                    const page = await pdf.getPage(pageNumber);
+                    const textContent = await page.getTextContent();
+
+                    // Extract text
+                    const pageText = textContent.items.map((item) => item.str).join(" ");
+                    pdfText += `Page ${pageNumber}:\n${pageText}\n\n`;
+                }
+
+                // Display the extracted text
+                output.textContent = pdfText;
+            } else {
+                output.textContent = "Please select a valid PDF file.";
+            }
+        });
+    </script>
+
+    <script type="text/javascript"
+        src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x/firebase-auth.js"></script>
+
+</body>
+
+</html>
